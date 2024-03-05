@@ -37,3 +37,7 @@ async def delete_note(note_id:int):
     for key, value in enumerate(note_db):
         if value.note_id == note_id:
             note_db.pop(key)
+            break
+    else:
+        raise HTTPException(404, detail = "Not found") 
+            
